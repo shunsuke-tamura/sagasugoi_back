@@ -32,16 +32,14 @@
                   "example-1": {
                     "value": [
                       {
-                        "id": "string",
+                        "id": 0,
                         "word": "string",
                         "comment": "string",
                         "url": "string",
-                        "looks": {
-                          "size": 0,
-                          "r": 0,
-                          "g": 0,
-                          "b": 0
-                        }
+                        "size": 0,
+                        "r": 0,
+                        "g": 0,
+                        "b": 0
                       }
                     ]
                   }
@@ -66,6 +64,22 @@
                   "items": {
                     "$ref": "#/components/schemas/Carp"
                   }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 0,
+                        "word": "string",
+                        "comment": "string",
+                        "url": "string",
+                        "size": 0,
+                        "r": 0,
+                        "g": 0,
+                        "b": 0
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -88,8 +102,30 @@
                     "type": "string",
                     "nullable": true
                   },
-                  "looks": {
-                    "$ref": "#/components/schemas/Looks"
+                  "size": {
+                    "type": "number"
+                  },
+                  "r": {
+                    "type": "number"
+                  },
+                  "g": {
+                    "type": "number"
+                  },
+                  "b": {
+                    "type": "number"
+                  }
+                }
+              },
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "word": "string",
+                    "comment": "string",
+                    "url": "string",
+                    "size": 0,
+                    "r": 0,
+                    "g": 0,
+                    "b": 0
                   }
                 }
               }
@@ -141,7 +177,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "integer"
           },
           "word": {
             "type": "string"
@@ -152,18 +188,6 @@
           "url": {
             "type": "string"
           },
-          "looks": {
-            "$ref": "#/components/schemas/Looks"
-          }
-        }
-      },
-      "Looks": {
-        "title": "looks",
-        "x-stoplight": {
-          "id": "bjitipq7lndxb"
-        },
-        "type": "object",
-        "properties": {
           "size": {
             "type": "number"
           },
