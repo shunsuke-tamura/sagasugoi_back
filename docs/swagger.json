@@ -25,7 +25,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "./sagasugoi.yaml#/components/schemas/Carp"
+                    "$ref": "#/components/schemas/Carp"
                   }
                 }
               }
@@ -46,7 +46,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "./sagasugoi.yaml#/components/schemas/Carp"
+                    "$ref": "#/components/schemas/Carp"
                   }
                 }
               }
