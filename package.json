@@ -1,0 +1,10 @@
+{
+  "name": "sagasugoi_back",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:shunsuke-tamura/sagasugoi_back.git",
+  "license": "MIT",
+  "devDependencies": {
+    "prism": "^4.1.2"
+  }
+}
