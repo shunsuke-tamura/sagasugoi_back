@@ -1,3 +1,4 @@
 .env
 docker/db/data
 src/tmp
+node_modules
