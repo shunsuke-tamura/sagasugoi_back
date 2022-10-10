@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "x-stoplight": {
-    "id": "lnwo6tf1cxv0u"
+    "id": "u178spntq1mwo"
   },
   "info": {
     "title": "sagasugoi",
@@ -25,37 +25,16 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Carp"
-                  }
-                },
-                "examples": {
-                  "example-1": {
-                    "value": [
-                      {
-                        "id": "1",
-                        "word": "有田焼",
-                        "comment": "有田焼(ありたやき)とは、佐賀県有田町とその周辺地域で製造される磁器を指しますが、明治以降に広く用いられるようになりました。江戸時代は伊万里焼もしくは肥前焼と呼ばれていました。",
-                        "url": "https://www.arita.jp/aritaware/",
-                        "typeId": 1
-                      },
-                      {
-                        "id": "2",
-                        "word": "バルーンフェスタ",
-                        "comment": "世界選手権・ワールド・エアゲーム・ヨーロッパ選手権などの公式選手権は、FAI（国際航空連盟）の公認する選手権で、世界各国で2年に一度（FAI規定による）開催されています。FAIはこれらの公式選手権をカテゴリ1の大会と称し、この第1カテゴリーには、公式選手権以外の大会も公認しています。",
-                        "url": "https://www.sibf.jp/",
-                        "typeId": 0
-                      }
-                    ]
+                    "$ref": "#/components/schemas/Sagasugoi_Carp"
                   }
                 }
               }
             }
           }
         },
-        "operationId": "get-carp",
+        "operationId": "get-carps",
         "description": "生簀内で泳がす鯉一覧取得"
       },
-      "parameters": [],
       "post": {
         "summary": "",
         "operationId": "post-carps",
@@ -67,40 +46,14 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Carp"
-                  }
-                },
-                "examples": {
-                  "example-1": {
-                    "value": [
-                      {
-                        "id": "1",
-                        "word": "有田焼",
-                        "comment": "有田焼(ありたやき)とは、佐賀県有田町とその周辺地域で製造される磁器を指しますが、明治以降に広く用いられるようになりました。江戸時代は伊万里焼もしくは肥前焼と呼ばれていました。",
-                        "url": "https://www.arita.jp/aritaware/",
-                        "typeId": 1
-                      },
-                      {
-                        "id": "2",
-                        "word": "バルーンフェスタ",
-                        "comment": "世界選手権・ワールド・エアゲーム・ヨーロッパ選手権などの公式選手権は、FAI（国際航空連盟）の公認する選手権で、世界各国で2年に一度（FAI規定による）開催されています。FAIはこれらの公式選手権をカテゴリ1の大会と称し、この第1カテゴリーには、公式選手権以外の大会も公認しています。",
-                        "url": "https://www.sibf.jp/",
-                        "typeId": 0
-                      },
-                      {
-                        "id": "3",
-                        "word": "嬉野茶",
-                        "comment": "嬉野茶は、日本茶の中では珍しい独特の丸みを帯びた茶の形状から、玉緑茶（グリ茶）と呼ばれ、製法は「蒸製玉緑茶」と「釜炒り茶」に分けられます。",
-                        "url": "https://ureshinochadoki.shop/user_data/know/tea",
-                        "typeId": 2
-                      }
-                    ]
+                    "$ref": "#/components/schemas/Sagasugoi_Carp"
                   }
                 }
               }
             }
           }
         },
+        "description": "新しい鯉作成\nレスポンスは生簀内で泳ぐ全ての鯉",
         "requestBody": {
           "content": {
             "application/json": {
@@ -114,44 +67,68 @@
                     "type": "string"
                   },
                   "url": {
-                    "type": [
-                      "string",
-                      "null"
-                    ]
+                    "type": "string",
+                    "nullable": true
                   },
                   "looks": {
                     "$ref": "#/components/schemas/Looks"
                   }
                 }
-              },
-              "examples": {
-                "example-1": {
-                  "value": {
-                    "word": "バルーンフェスタ",
-                    "comment": "世界選手権・ワールド・エアゲーム・ヨーロッパ選手権などの公式選手権は、FAI（国際航空連盟）の公認する選手権で、世界各国で2年に一度（FAI規定による）開催されています。FAIはこれらの公式選手権をカテゴリ1の大会と称し、この第1カテゴリーには、公式選手権以外の大会も公認しています。",
-                    "url": "https://www.sibf.jp/",
-                    "typeId": 0
-                  }
-                },
-                "example-2": {
-                  "value": {
-                    "word": "string",
-                    "comment": "string",
-                    "url": "string",
-                    "type": 0
-                  }
-                }
               }
             }
           }
-        },
-        "description": "新しい鯉作成\nレスポンスは生簀内で泳ぐ全ての鯉"
+        }
       }
     }
   },
   "components": {
     "schemas": {
       "Carp": {
+        "title": "carp",
+        "x-stoplight": {
+          "id": "4piafu7xe4hhm"
+        },
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "word": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "looks": {
+            "type": "string"
+          }
+        }
+      },
+      "Looks": {
+        "title": "looks",
+        "x-stoplight": {
+          "id": "bjitipq7lndxb"
+        },
+        "type": "object",
+        "properties": {
+          "size": {
+            "type": "number"
+          },
+          "r": {
+            "type": "number"
+          },
+          "g": {
+            "type": "number"
+          },
+          "b": {
+            "type": "number"
+          }
+        }
+      },
+      "Sagasugoi_Carp": {
         "title": "carp",
         "x-stoplight": {
           "id": "cr707rwl5qb8l"
@@ -174,11 +151,11 @@
             ]
           },
           "looks": {
-            "$ref": "#/components/schemas/Looks"
+            "$ref": "#/components/schemas/Sagasugoi_Looks"
           }
         }
       },
-      "Looks": {
+      "Sagasugoi_Looks": {
         "title": "looks",
         "x-stoplight": {
           "id": "2mxu0g5yvyabe"
@@ -207,7 +184,6 @@
           }
         }
       }
-    },
-    "requestBodies": {}
+    }
   }
 }
