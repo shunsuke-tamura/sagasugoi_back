@@ -25,7 +25,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Sagasugoi_Carp"
+                    "$ref": "./sagasugoi.yaml#/components/schemas/Carp"
                   }
                 }
               }
@@ -46,7 +46,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Sagasugoi_Carp"
+                    "$ref": "./sagasugoi.yaml#/components/schemas/Carp"
                   }
                 }
               }
@@ -78,6 +78,38 @@
             }
           }
         }
+      }
+    },
+    "/healthcheck": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "status": "OK"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-healthcheck"
       }
     }
   },
@@ -113,62 +145,6 @@
           "id": "bjitipq7lndxb"
         },
         "type": "object",
-        "properties": {
-          "size": {
-            "type": "number"
-          },
-          "r": {
-            "type": "number"
-          },
-          "g": {
-            "type": "number"
-          },
-          "b": {
-            "type": "number"
-          }
-        }
-      },
-      "Sagasugoi_Carp": {
-        "title": "carp",
-        "x-stoplight": {
-          "id": "cr707rwl5qb8l"
-        },
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "word": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "url": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "looks": {
-            "$ref": "#/components/schemas/Sagasugoi_Looks"
-          }
-        }
-      },
-      "Sagasugoi_Looks": {
-        "title": "looks",
-        "x-stoplight": {
-          "id": "2mxu0g5yvyabe"
-        },
-        "type": "object",
-        "examples": [
-          {
-            "size": 0,
-            "r": 0,
-            "g": 0,
-            "b": 0
-          }
-        ],
         "properties": {
           "size": {
             "type": "number"
