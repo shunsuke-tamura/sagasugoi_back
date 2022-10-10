@@ -25,7 +25,25 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "./sagasugoi.yaml#/components/schemas/Carp"
+                    "$ref": "#/components/schemas/Carp"
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": "string",
+                        "word": "string",
+                        "comment": "string",
+                        "url": "string",
+                        "looks": {
+                          "size": 0,
+                          "r": 0,
+                          "g": 0,
+                          "b": 0
+                        }
+                      }
+                    ]
                   }
                 }
               }
@@ -46,7 +64,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "./sagasugoi.yaml#/components/schemas/Carp"
+                    "$ref": "#/components/schemas/Carp"
                   }
                 }
               }
@@ -135,7 +153,7 @@
             "type": "string"
           },
           "looks": {
-            "type": "string"
+            "$ref": "#/components/schemas/Looks"
           }
         }
       },
