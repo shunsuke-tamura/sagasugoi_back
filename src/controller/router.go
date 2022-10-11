@@ -9,6 +9,13 @@ import (
 func GetRouter() *gin.Engine {
 	r := gin.Default()
 	r.GET("/healthcheck", Healthcheck)
+
+	carpApi := r.Group("/carps")
+	{
+		carpApi.GET("/", GetCarps)
+		carpApi.POST("/", PostCarp)
+	}
+
 	api := r.Group("/types")
 	{
 		api.GET("/", Index)
