@@ -3,11 +3,26 @@ package controller
 import (
 	"sagasugoi/model"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
 func GetRouter() *gin.Engine {
 	r := gin.Default()
+	r.Use(cors.New(cors.Config{
+		AllowOrigins: []string{
+			"http://localhost:3000",
+		},
+		AllowMethods: []string{
+			"POST",
+			"GET",
+			"OPTIONS",
+		},
+		AllowHeaders: []string{
+			"Content-Type",
+		},
+	}))
+
 	r.GET("/healthcheck", Healthcheck)
 
 	carpApi := r.Group("/carps")
