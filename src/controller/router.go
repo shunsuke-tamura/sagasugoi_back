@@ -9,6 +9,7 @@ import (
 
 func GetRouter() *gin.Engine {
 	r := gin.Default()
+	// r.Use(cors.Default())
 	r.Use(cors.New(cors.Config{
 		AllowOrigins: []string{
 			"http://localhost:3000",

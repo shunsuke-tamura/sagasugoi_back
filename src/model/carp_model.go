@@ -1,9 +1,5 @@
 package model
 
-import (
-	"fmt"
-)
-
 type Carp struct {
 	GormModel
 	// CreateCarpReq
@@ -22,11 +18,10 @@ func ReadAllCarps() []Carp {
 	return carps
 }
 
-func CreateCarp(carp Carp) bool {
-	fmt.Printf("%+v\n", carp)
+func CreateCarp(carp Carp) Carp {
 	result := db.Create(&carp)
 	if result.Error != nil {
 		panic(result.Error)
 	}
-	return true
+	return carp
 }
