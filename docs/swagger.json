@@ -27,6 +27,22 @@
                   "items": {
                     "$ref": "#/components/schemas/Carp"
                   }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 0,
+                        "word": "string",
+                        "comment": "string",
+                        "url": "string",
+                        "size": 0,
+                        "r": 0,
+                        "g": 0,
+                        "b": 0
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -44,16 +60,29 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Carp"
+                  "$ref": "#/components/schemas/Carp"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "id": 0,
+                        "word": "string",
+                        "comment": "string",
+                        "url": "string",
+                        "size": 0,
+                        "r": 0,
+                        "g": 0,
+                        "b": 0
+                      }
+                    ]
                   }
                 }
               }
             }
           }
         },
-        "description": "新しい鯉作成\nレスポンスは生簀内で泳ぐ全ての鯉",
+        "description": "新しい鯉作成\nレスポンスは新しく作られた鯉",
         "requestBody": {
           "content": {
             "application/json": {
@@ -70,8 +99,30 @@
                     "type": "string",
                     "nullable": true
                   },
-                  "looks": {
-                    "$ref": "#/components/schemas/Looks"
+                  "size": {
+                    "type": "number"
+                  },
+                  "r": {
+                    "type": "number"
+                  },
+                  "g": {
+                    "type": "number"
+                  },
+                  "b": {
+                    "type": "number"
+                  }
+                }
+              },
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "word": "string",
+                    "comment": "string",
+                    "url": "string",
+                    "size": 0,
+                    "r": 0,
+                    "g": 0,
+                    "b": 0
                   }
                 }
               }
@@ -111,6 +162,25 @@
         },
         "operationId": "get-healthcheck"
       }
+    },
+    "/token_for_upload_image": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SasToken"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-token_for_upload_image"
+      }
     }
   },
   "components": {
@@ -123,7 +193,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "integer"
           },
           "word": {
             "type": "string"
@@ -134,18 +204,6 @@
           "url": {
             "type": "string"
           },
-          "looks": {
-            "type": "string"
-          }
-        }
-      },
-      "Looks": {
-        "title": "looks",
-        "x-stoplight": {
-          "id": "bjitipq7lndxb"
-        },
-        "type": "object",
-        "properties": {
           "size": {
             "type": "number"
           },
@@ -157,6 +215,21 @@
           },
           "b": {
             "type": "number"
+          }
+        }
+      },
+      "SasToken": {
+        "title": "SasToken",
+        "x-stoplight": {
+          "id": "fvukvrg99amqc"
+        },
+        "type": "object",
+        "properties": {
+          "sasKey": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
           }
         }
       }
