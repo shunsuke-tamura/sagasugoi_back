@@ -1,1 +1,1 @@
-ALTER TABLE carps ADD COLUMN imageName varchar(256) NULL;
+ALTER TABLE carps ADD COLUMN image_name varchar(256) NULL;

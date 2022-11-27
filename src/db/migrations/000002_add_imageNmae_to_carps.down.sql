@@ -1,1 +1,1 @@
-ALTER TABLE users DROP COLUMN imageName;
+ALTER TABLE carps DROP COLUMN image_name;
