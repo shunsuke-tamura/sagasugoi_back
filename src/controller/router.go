@@ -31,7 +31,7 @@ func GetRouter() *gin.Engine {
 		carpApi.GET("/", GetCarps)
 		carpApi.POST("/", PostCarp)
 	}
-	r.GET("/token_for_upload_image", GetSASToken)
+	r.GET("/sas_token", GetSASToken)
 
 	api := r.Group("/types")
 	{

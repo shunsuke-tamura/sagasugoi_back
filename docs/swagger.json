@@ -167,7 +167,7 @@
         "operationId": "get-healthcheck"
       }
     },
-    "/token_for_upload_image": {
+    "/sas_token": {
       "get": {
         "summary": "Your GET endpoint",
         "tags": [],
@@ -184,7 +184,8 @@
           }
         },
         "operationId": "get-token_for_upload_image"
-      }
+      },
+      "parameters": []
     }
   },
   "components": {
