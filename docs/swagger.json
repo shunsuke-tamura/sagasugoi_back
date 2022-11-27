@@ -110,6 +110,10 @@
                   },
                   "b": {
                     "type": "number"
+                  },
+                  "imageName": {
+                    "type": "string",
+                    "nullable": true
                   }
                 }
               },
@@ -215,6 +219,9 @@
           },
           "b": {
             "type": "number"
+          },
+          "imageName": {
+            "type": "string"
           }
         }
       },
