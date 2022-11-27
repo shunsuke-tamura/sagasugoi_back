@@ -6,7 +6,7 @@ type Carp struct {
 	Word      string  `json:"word" binding:"required"`
 	Comment   string  `json:"comment" binding:"required"`
 	Url       *string `json:"url"`
-	ImageName *string `json:"iamgeName"`
+	ImageName *string `json:"imageName"`
 	Looks
 }
 
