@@ -1,7 +1,7 @@
 // 参考：https://learn.microsoft.com/ja-jp/training/modules/blob-storage-image-upload-static-web-apps/5-exercise-serverless
 // 生成されるのは、
 // コンテナレベル
-// create権限
+// read/create権限
 // 有効期限2時間
 
 const {
@@ -40,7 +40,7 @@ function generateSasToken(connectionString, container, permissions) {
 module.exports = async function (context, req) {
   context.log("JavaScript HTTP trigger function processed a request.");
   // c: create
-  const permissions = "c";
+  const permissions = "rc";
   const container = "image";
   context.res = {
     body: generateSasToken(
