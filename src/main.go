@@ -1,9 +1,16 @@
 package main
 
-import "sagasugoi/controller"
+import (
+	"sagasugoi/controller"
+
+	"github.com/joho/godotenv"
+)
 
 func main() {
-
+	err := godotenv.Load("env/dev.env")
+	if err != nil {
+		panic("Error loading .env file")
+	}
 	r := controller.GetRouter()
 	r.Run()
 }
