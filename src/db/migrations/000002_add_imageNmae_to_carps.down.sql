@@ -1,0 +1,1 @@
+ALTER TABLE carps DROP COLUMN image_name;
