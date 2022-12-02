@@ -17,8 +17,8 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
   server:
     build:
-        context: ./
-        dockerfile: ./docker/server/Dockerfile
+      context: ./
+      dockerfile: ./docker/server/Dockerfile
     ports:
       - ${SERVER_PORT}:${SERVER_PORT}
     depends_on:
